@@ -1,88 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
     <div class="login-box">
       <div class="title">Datos Personales</div>
-      <form action="#">
-          <div class="field">
-            <br>
-              <label>Nombre:</label>
-              <input id="Imp" type="text" required>
-              <img src="img/img.jpg" class="imagen">
-              <br>
-              <br>
-              <label>Apellido:</label>
-              <input id="Imp" type="text" required>
-              <br>
-              <br>
-              <label>Sexo:</label>
-              <select id="Imp">
-                <option>M</option>
-                <option>F</option>                
-              </select>
-              <br>
-              <br>
-              <label>Fecha de Nacimiento:</label>
-              <input id="Imp" type="date" required>
-              <br>
-              <br>
-              <label>Fecha de Ingreso:</label>
-              <input id="Imp" type="date" required>
-          </div>
+      <div class="imagen-container">
+        <img src="img/img.jpg" class="imagen">
+      </div>
+      <form>
+        <div class="field">
+          <label for="nombre">Nombre:</label>
+          <input id="nombre" type="text" required>
+          
+        </div>
+        <div class="field">
+          <label for="apellido">Apellido:</label>
+          <input id="apellido" type="text" required>
+        </div>
+        <div class="field">
+          <label for="sexo">Sexo:</label>
+          <select id="sexo">
+            <option>M</option>
+            <option>F</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+          <input id="fechaNacimiento" type="date" required>
+        </div>
+        <div class="field">
+          <label for="fechaIngreso">Fecha de Ingreso:</label>
+          <input id="fechaIngreso" type="date" required>
+        </div>
+        <div class="title">Salario</div>
+        <div class="field2">
+          <div class="salario-container">
+            <p class="salario">Salario: <span id="Edit_salario">0</span></p>
+            <button onclick="modificarSalario()" class="modificar" type="button">Modificar</button>
+          </div>          
+        </div>
+        <div class="title">Calculos</div>
+        <div class="field3">
+          <button class="calculos" type="button" onclick="calcularEdad()">Calcular Edad</button>
+          <input id="edad" type="text" class="respuesta" readonly>
           <br>
-          <div class="title">Salario</div>
-          <div class="field2">
-            <br>
-            <label class="salario">Salario:</label>
-            <input id="Imp2" type="number" required>
-            <button class="modificar" type="button">Modificar</button>
+          <button class="calculos" type="button" onclick="calcularAntiguedad()">Calcular Antiguedad</button>
+          <input id="antiguedad" type="text" class="respuesta" readonly>
+          <br>
+          <button class="calculos" type="button" onclick="calcularPrestaciones()">Calcular Prestaciones</button>
+          <input id="prestaciones" type="text" class="respuesta" readonly>
+        </div>
+
+        <br>
+        <div class="field4">
+          <button class="btn btn-primary" onclick="Opcion1()">Opcion 1</button>
+          <button class="btn btn-primary" onclick="Opcion2()">Opcion 2</button>
+        </div>
+        <div class="container">
+          
+        <div id="Estudios" style="display: none;">
+          <label for="hobbies"> Nivel de Estudio </label> 
+            <select id="niveles">
+            <option disabled selected>Escoja una opción</option>
+            <option value=" Primaria">Primaria</option>
+            <option value="Secundaria">Secundaria</option>
+            <option value="Bachillerato">Bachillerato</option>
+            <option value="Tecnico">Tecnico</option>
+            <option value="Profesional">Profesional</option>
+          </select><br>
+          <label for="hobbies"> Nombre de la Institucion </label> 
+          <input type="text" id="institucion"><br>
+          <label for="hobbies"> ¿Algun titulo obtenido?</label> 
+          <input type="text" placeholder="Titulo" id="titulo" ><br>
+          <div class="container" id="info">
+          <br>
+          <div class="field4">
+          <button class="btn btn-success" onclick="mostrarInformacion()" > Mostrar Informacion </button>
+        </div>
+        </div>
+        </div>
+    
+        <div id="informacion" style="display: none;">
+    
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nivel de estudio</th>
+                <th scope="col">Institucion</th>
+                <th scope="col">Titulo</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row"><label for="nivelform" id="nivelform"></label></th>
+                <th scope="row"><label for="instituc" id="instituc"></label></th>
+                <th scope="row"><label for="titu" id="titu"></label></th>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div class="field4">
+          <button class="btn btn-danger" onclick="cerrar()" > Cerrar </button>
           </div>
-          <div class="title">Calculos</div>
-          <div class="field3">
-            <br>
-            <button class="calculos"  type="button">Calcular Edad</button>
-            <input  type="tex" required>
-            <br>
-            <button class="calculos" type="button">Calcular Antiguedad</button>
-            <input type="text" required>
-            <br>
-            <button class="calculos" type="button">Calcular Prestaciones</button>
-            <input type="text" required>
-          </div>
-          <div class="title">Puntos de Extensión</div>
-          <div class="field2">
-            <br>
-            <button class="redireccion" type="button">Opcion 1</button>
-            <button class="redireccion" type="button">Opcion 2</button>
-          </div>
+        </div>
+      </div>
       </form>
+    </div>
   </div>
 
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/Funciones.js"></script>
+
+</body>
+
 </html>

@@ -1,99 +1,68 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI';
-}
-
-html,body{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    place-items: center;
-    background: linear-gradient(-135deg, #f5f5f5, #fcfcfc);
-    background-image: url(img/fondo.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;     
-} 
-
-
-.login-box{
-    width: 680px;
-    border-radius: 5px;
-    background: #cdd1d0
-    
-}
-
-.title{
-    color: black;
-}
-
-label{
-    color: black;
-}
-
-#Imp{
+body {
+    background-color: #f8f8f8;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .login-box {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .field {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  select {
+    width: 50%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .calculos {
+    margin-bottom: 10px;
+  }
+  
+  .imagen {
     position: absolute;
-    left: 550px;
-}
+    width: 180px;
+    height: 120px;
+    margin-left: 450px;
+  }
+  
+  .respuesta {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 
-#Imp2{
-    position: absolute;
-    left: 580px;
-}
-
-.field{
-    width: 670px;
-    margin-left: 5px;
-    height: 280px;
-    border-radius: 5px;
-    background: #f5f5f5;
-}
-
-.field2{
-    width: 670px;
-    margin-left: 5px;
-    height: 80px;
-    border-radius: 5px;
-    background: #f5f5f5;
-}
-
-.field3{
-    width: 670px;
-    margin-left: 5px;
-    height: 180px;
-    border-radius: 5px;
-    background: #f5f5f5;
-}
-
-.salario{
-    margin-left: 180px;
-}
-
-.modificar{
-    margin-left: 210px;
-    background: linear-gradient(white, rgb(114, 168, 230));
-}
-
-.calculos{
-    margin-left: 110px;
-    margin-bottom: 15px;
-    width: 160px;
-    background: linear-gradient(white, rgb(114, 168, 230));
-}
-
-.redireccion{
-    margin-left: 140px;
-    width: 110px;
-    background: linear-gradient(white, rgb(114, 168, 230));
-}
-
-.imagen{
-    height: 100px;
-    width: 150px;
-    position: absolute;
-    top: 8%;
-    left: 60%;
-}
+  .field4{
+    text-align: center;
+  }
+  
