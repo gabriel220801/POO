@@ -8,6 +8,10 @@ class Empleado {
     this.salario = salario;
   }
 
+  verNombre() {
+    return (this.Nivel = document.getElementById("nombre").value);
+  }
+
   verNivel() {
     return (this.Nivel = document.getElementById("niveles").value);
   }
@@ -18,6 +22,18 @@ class Empleado {
   
   verTitulo() {
     return (this.Titulo = document.getElementById("titulo").value);
+  }
+
+  verCargo() {
+    return (this.cargo = document.getElementById("cargo").value);
+  }
+
+  verDepartamento() {
+    return (this.departamento = document.getElementById("departamento").value);
+  }
+
+  verJerarquia() {
+    return (this.jerarquia = document.getElementById("jerarquia").value);
   }
 
   modificarSalario(nuevoSalario) {
@@ -119,12 +135,13 @@ function mostrarInformacion() {
     ver.style.display = "block";
   } 
 
-  
+  let nom = document.getElementById("nombre").value;
   let niv = document.getElementById("niveles").value;
   let inst = document.getElementById("institucion").value;
   let tit = document.getElementById("titulo").value;
 
   if (
+    nom == 0 ||
     niv == 0 ||
     inst.length == 0 ||
     tit.length == 0
@@ -132,9 +149,11 @@ function mostrarInformacion() {
     alert("Existen campos vacios o erroneos, verifique");
   } else {
     let informacion = new Empleado();
+    let nomb = informacion.verNombre();
     let nivel = informacion.verNivel();
     let institucion = informacion.verInstitucion();
     let titulo= informacion.verTitulo();
+    document.getElementById("nomemple").innerHTML = nomb;
     document.getElementById("nivelform").innerHTML = nivel;
     document.getElementById("instituc").innerHTML = institucion;
     document.getElementById("titu").innerHTML = titulo;
@@ -150,6 +169,55 @@ function cerrar(){
 
 }
 
+
+
+
+
+function Opcion2() {
+  var op = document.getElementById("cargoemp");
+  if (op.style.display === "none") {
+    op.style.display = "block";
+  } else {
+    op.style.display = "none";
+  }
+}
+
+function mostrarInformacion2() {
+  var ver = document.getElementById("infocargo");
+  if (ver.style.display === "none") {
+    ver.style.display = "block";
+  } 
+
+  
+  let carg = document.getElementById("cargo").value;
+  let dep = document.getElementById("departamento").value;
+  let jer = document.getElementById("jerarquia").value;
+
+  if (
+    carg == 0 ||
+    dep.length == 0 ||
+    jer.length == 0
+  ) {
+    alert("Existen campos vacios o erroneos, verifique");
+  } else {
+    let infocargo = new Empleado();
+    let cargoo = infocargo.verCargo();
+    let departamentoo = infocargo.verDepartamento();
+    let jerarquiaa = infocargo.verJerarquia();
+    document.getElementById("cargoemple").innerHTML = cargoo;
+    document.getElementById("depaemple").innerHTML = departamentoo;
+    document.getElementById("jeraremple").innerHTML = jerarquiaa;
+  }
+
+}
+
+function cerrar2(){
+  var cerr = document.getElementById("infocargo");
+  cerr.style.display = "none";
+  var ceerr = document.getElementById("cargoemp");
+  ceerr.style.display = "none";
+
+}
 
 
 

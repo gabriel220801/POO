@@ -102,6 +102,7 @@
           <table class="table">
             <thead>
               <tr>
+                <th scope="col">Nombre</th>
                 <th scope="col">Nivel de estudio</th>
                 <th scope="col">Institucion</th>
                 <th scope="col">Titulo</th>
@@ -110,6 +111,7 @@
 
             <tbody>
               <tr>
+                <th scope="row"><label for="nomemple" id="nomemple"></label></th>
                 <th scope="row"><label for="nivelform" id="nivelform"></label></th>
                 <th scope="row"><label for="instituc" id="instituc"></label></th>
                 <th scope="row"><label for="titu" id="titu"></label></th>
@@ -121,10 +123,75 @@
           <button class="btn btn-danger" onclick="cerrar()" > Cerrar </button>
           </div>
         </div>
+        <div id="cargoemp" style="display: none;">
+          <label for="hobbies"> Cargo en la empresa </label> 
+            <select id="cargo">
+            <option disabled selected>Escoja una opción</option>
+            <option value="Director Ejecutivo">Director Ejecutivo</option>
+            <option value="Gerente">Gerente</option>
+            <option value="Asistente Administrativo">Asistente Administrativo</option>
+            <option value="Personal de ventas">Personal de ventas</option>
+            <option value="Personal de Atencion al cliente">Personal Atencion al cliente</option>
+          </select><br>
+          
+          <label for="hobbies"> Departamento al que pertenece </label> 
+            <select id="departamento">
+            <option disabled selected>Escoja una opción</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
+            <option value="Departamento de Ventas">Departamento de ventas</option>
+            <option value="Departamento de Marketing">Departamento de Marketing</option>
+            <option value="Departamento Financiero">Departamento financiero</option>
+            <option value="Departamento de Tecnologia">Departamento de Tecnologia</option>
+          </select><br>
+    
+          <label for="hobbies"> Nivel de Jerarquia </label> 
+            <select id="jerarquia">
+            <option disabled selected>Escoja una opción</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Gerente nivel Medio">Gerente nivel Medio</option>
+            <option value="Gerente nivel superior">Gerente nivel Superior</option>
+            <option value="Junta Directiva">Junta Directiva</option>
+            <option value="Empleado">Empleado</option>
+          </select><br>
+          <br>
+          <div class="field4">
+          <button class="btn btn-success" onclick="mostrarInformacion2()" > Mostrar Informacion </button>
+        </div>
+        </div>
+        </div>
+    
+      <div id="infocargo" style="display: none;">
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Cargo</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Jerarquia</th>
+            </tr>
+          </thead>
+    
+          <tbody>
+            <tr>
+              <th scope="row"><label for="cargoemple" id="cargoemple"></label></th>
+              <th scope="row"><label for="depaemple" id="depaemple"></label></th>
+              <th scope="row"><label for="jeraremple" id="jeraremple"></label></th>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <div class="field4">
+        <button class="btn btn-danger" onclick="cerrar2()" > Cerrar </button>
+        </div>
+      </div>
+    </div>
+
       </div>
       </form>
     </div>
   </div>
+
+  
 
   <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
