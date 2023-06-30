@@ -12,6 +12,14 @@ class Empleado {
     return (this.Nivel = document.getElementById("nombre").value);
   }
 
+  verApellido() {
+    return (this.Nivel = document.getElementById("apellido").value);
+  }
+
+  verGenero() {
+  return (this.Nivel = document.getElementById("sexo").value);
+  }
+
   verNivel() {
     return (this.Nivel = document.getElementById("niveles").value);
   }
@@ -99,19 +107,19 @@ function obtenerDatosEmpleado() {
 function modificarSalario() {
   const nuevoSalario = parseFloat(prompt("Ingrese el nuevo salario"));
   const empleado = obtenerDatosEmpleado();
-  empleado.modificarSalario(nuevoSalario);
+  empleado.modificarSalario(nuevoSalario) ;
 }
 
 function calcularEdad() {
   const empleado = obtenerDatosEmpleado();
   const edad = empleado.calcularEdad();
-  document.getElementById("edad").value = edad.toString();
+  document.getElementById("edad").value = edad.toString() + " Años";
 }
 
 function calcularAntiguedad() {
   const empleado = obtenerDatosEmpleado();
   const antiguedad = empleado.calcularAntiguedad();
-  document.getElementById("antiguedad").value = antiguedad.toString();
+  document.getElementById("antiguedad").value = antiguedad.toString() + " Años";
 }
 
 function calcularPrestaciones() {
@@ -136,12 +144,17 @@ function mostrarInformacion() {
   } 
 
   let nom = document.getElementById("nombre").value;
+  let apell = document.getElementById("apellido").value;
+  let gen = document.getElementById("sexo").value;
+
   let niv = document.getElementById("niveles").value;
   let inst = document.getElementById("institucion").value;
   let tit = document.getElementById("titulo").value;
 
   if (
     nom == 0 ||
+    apell == 0 ||
+    gen == 0 ||
     niv == 0 ||
     inst.length == 0 ||
     tit.length == 0
@@ -150,10 +163,14 @@ function mostrarInformacion() {
   } else {
     let informacion = new Empleado();
     let nomb = informacion.verNombre();
+    let ape = informacion.verApellido();
+    let gene = informacion.verGenero();
     let nivel = informacion.verNivel();
     let institucion = informacion.verInstitucion();
     let titulo= informacion.verTitulo();
     document.getElementById("nomemple").innerHTML = nomb;
+    document.getElementById("apellemple").innerHTML = ape;
+    document.getElementById("genemple").innerHTML = gene;
     document.getElementById("nivelform").innerHTML = nivel;
     document.getElementById("instituc").innerHTML = institucion;
     document.getElementById("titu").innerHTML = titulo;
@@ -188,12 +205,13 @@ function mostrarInformacion2() {
     ver.style.display = "block";
   } 
 
-  
+  let nE = document.getElementById("nombre").value;
   let carg = document.getElementById("cargo").value;
   let dep = document.getElementById("departamento").value;
   let jer = document.getElementById("jerarquia").value;
 
   if (
+    nE ==0 ||
     carg == 0 ||
     dep.length == 0 ||
     jer.length == 0
@@ -201,9 +219,11 @@ function mostrarInformacion2() {
     alert("Existen campos vacios o erroneos, verifique");
   } else {
     let infocargo = new Empleado();
+    let noE = infocargo.verNombre();
     let cargoo = infocargo.verCargo();
     let departamentoo = infocargo.verDepartamento();
     let jerarquiaa = infocargo.verJerarquia();
+    document.getElementById("nomE").innerHTML = noE;
     document.getElementById("cargoemple").innerHTML = cargoo;
     document.getElementById("depaemple").innerHTML = departamentoo;
     document.getElementById("jeraremple").innerHTML = jerarquiaa;

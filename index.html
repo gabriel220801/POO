@@ -18,25 +18,28 @@
 </head>
 
 <body>
+ 
   <div class="container">
     <div class="login-box">
-      <div class="title">Datos Personales</div>
-      <div class="imagen-container">
-        <img src="img/img.jpg" class="imagen">
-      </div>
+      <div class="title">DATOS PERSONALES</div>
+      
       <form>
         <div class="field">
           <label for="nombre">Nombre:</label>
           <input id="nombre" type="text" required>
           
         </div>
+        <div class="imagen-container">
+          <img src="img/img.jpg" class="imagen">
+        </div>
         <div class="field">
           <label for="apellido">Apellido:</label>
           <input id="apellido" type="text" required>
         </div>
         <div class="field">
-          <label for="sexo">Sexo:</label>
+          <label for="sexo">Genero:</label>
           <select id="sexo">
+            <option disabled selected>Escoja una opción</option>
             <option>M</option>
             <option>F</option>
           </select>
@@ -44,19 +47,26 @@
         <div class="field">
           <label for="fechaNacimiento">Fecha de Nacimiento:</label>
           <input id="fechaNacimiento" type="date" required>
+          
         </div>
         <div class="field">
           <label for="fechaIngreso">Fecha de Ingreso:</label>
           <input id="fechaIngreso" type="date" required>
         </div>
-        <div class="title">Salario</div>
+        <br>
+        <div class="title">SALARIO</div>
         <div class="field2">
+          <br>
           <div class="salario-container">
-            <p class="salario">Salario: <span id="Edit_salario">0</span></p>
+            
+            <p id="salario" class="salario">Salario: $ <span id="Edit_salario">0</span></p>
             <button onclick="modificarSalario()" class="modificar" type="button">Modificar</button>
           </div>          
         </div>
-        <div class="title">Calculos</div>
+        <br>
+        <br>
+        <div class="title">CALCULOS</div>
+        <br>
         <div class="field3">
           <button class="calculos" type="button" onclick="calcularEdad()">Calcular Edad</button>
           <input id="edad" type="text" class="respuesta" readonly>
@@ -74,9 +84,9 @@
           <button class="btn btn-primary" onclick="Opcion2()">Opcion 2</button>
         </div>
         <div class="container">
-          
+          <br>
         <div id="Estudios" style="display: none;">
-          <label for="hobbies"> Nivel de Estudio </label> 
+          <label for="niveles"> Nivel de Estudio </label> 
             <select id="niveles">
             <option disabled selected>Escoja una opción</option>
             <option value=" Primaria">Primaria</option>
@@ -85,10 +95,10 @@
             <option value="Tecnico">Tecnico</option>
             <option value="Profesional">Profesional</option>
           </select><br>
-          <label for="hobbies"> Nombre de la Institucion </label> 
-          <input type="text" id="institucion"><br>
-          <label for="hobbies"> ¿Algun titulo obtenido?</label> 
-          <input type="text" placeholder="Titulo" id="titulo" ><br>
+          <label for="institucion"> Nombre de la Institucion </label> 
+          <input type="text" placeholder="Nombre de la Institucion" id="institucion"><br>
+          <label for="titulo"> ¿Algun titulo obtenido?</label> 
+          <input type="text" placeholder="Titulo Obtenido" id="titulo" ><br>
           <div class="container" id="info">
           <br>
           <div class="field4">
@@ -103,6 +113,8 @@
             <thead>
               <tr>
                 <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Genero</th>                
                 <th scope="col">Nivel de estudio</th>
                 <th scope="col">Institucion</th>
                 <th scope="col">Titulo</th>
@@ -112,6 +124,9 @@
             <tbody>
               <tr>
                 <th scope="row"><label for="nomemple" id="nomemple"></label></th>
+                <th scope="row"><label for="apellemple" id="apellemple"></label></th>
+                <th scope="row"><label for="genemple" id="genemple"></label></th>
+
                 <th scope="row"><label for="nivelform" id="nivelform"></label></th>
                 <th scope="row"><label for="instituc" id="instituc"></label></th>
                 <th scope="row"><label for="titu" id="titu"></label></th>
@@ -124,7 +139,7 @@
           </div>
         </div>
         <div id="cargoemp" style="display: none;">
-          <label for="hobbies"> Cargo en la empresa </label> 
+          <label for="cargo"> Cargo en la empresa </label> 
             <select id="cargo">
             <option disabled selected>Escoja una opción</option>
             <option value="Director Ejecutivo">Director Ejecutivo</option>
@@ -134,7 +149,7 @@
             <option value="Personal de Atencion al cliente">Personal Atencion al cliente</option>
           </select><br>
           
-          <label for="hobbies"> Departamento al que pertenece </label> 
+          <label for="departamento"> Departamento al que pertenece </label> 
             <select id="departamento">
             <option disabled selected>Escoja una opción</option>
             <option value="Recursos Humanos">Recursos Humanos</option>
@@ -144,7 +159,7 @@
             <option value="Departamento de Tecnologia">Departamento de Tecnologia</option>
           </select><br>
     
-          <label for="hobbies"> Nivel de Jerarquia </label> 
+          <label for="jerarquia"> Nivel de Jerarquia </label> 
             <select id="jerarquia">
             <option disabled selected>Escoja una opción</option>
             <option value="Supervisor">Supervisor</option>
@@ -165,6 +180,7 @@
         <table class="table">
           <thead>
             <tr>
+              <th scope="col">Nombre</th>
               <th scope="col">Cargo</th>
               <th scope="col">Departamento</th>
               <th scope="col">Jerarquia</th>
@@ -173,6 +189,7 @@
     
           <tbody>
             <tr>
+              <th scope="row"><label for="nomE" id="nomE"></label></th>
               <th scope="row"><label for="cargoemple" id="cargoemple"></label></th>
               <th scope="row"><label for="depaemple" id="depaemple"></label></th>
               <th scope="row"><label for="jeraremple" id="jeraremple"></label></th>
